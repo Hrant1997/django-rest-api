@@ -2,8 +2,8 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from api.serializers.ProfileSerializer import ProfileSerializer
-from api.models.ProfileModel import Profile
+from api.serializers import ProfileSerializer
+from api.models import Profile
 
 
 class ProfileViewSet(viewsets.ModelViewSet):

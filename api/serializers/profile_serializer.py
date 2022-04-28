@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from api.models.ProfileModel import Profile
+from api.models import Profile
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

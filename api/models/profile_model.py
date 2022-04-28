@@ -1,7 +1,7 @@
 from django.db import models
-from .common.base import Model
+from .common import BaseModel
 
-class Profile(Model):
+class Profile(BaseModel):
     name = models.CharField(max_length=60)
     alias = models.CharField(max_length=60)
     

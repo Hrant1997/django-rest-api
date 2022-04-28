@@ -1,7 +1,7 @@
 from django.db import models
-from .common.base import Model
+from .common import BaseModel
 
-class User(Model):
+class User(BaseModel):
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=60)
     email = models.EmailField(unique=True)
