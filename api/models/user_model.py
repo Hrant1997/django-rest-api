@@ -5,7 +5,8 @@ class User(BaseModel):
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=60)
     email = models.EmailField(unique=True)
+    # username = models.UniqueConstraint()
     
     def __str__(self):
-        return self.name
+        return self.first_name + self.last_name
 
