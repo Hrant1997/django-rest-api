@@ -1,15 +1,22 @@
 from django.urls import include, path
 from rest_framework import routers
+
 from . import views
 
-router = routers.DefaultRouter()
+api_router = routers.DefaultRouter()
 
-router.register(r'profiles', views.ProfileViewSet)
-router.register(r'users', views.UserViewSet)
+api_router.register(r'users', views.UserViewSet)
 
-# from modules.music import urls as music_urls
-# Wire up our API using automatic URL routing.
-# Additionally, we include login URLs for the browsable API.
+
+api_routes = [
+    path('profiles', views.ProfileViewSet.as_view()),
+    path('profiles/<profile:profile>', views.ProfileDetailApiView.as_view())
+]
+
+
+for route in api_routes:
+    api_router.urls.append(route)
+    
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('api/v1/', include(api_router.urls)),
 ]
