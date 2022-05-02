@@ -9,7 +9,7 @@ api_router.register(r'users', views.UserViewSet)
 
 
 api_routes = [
-    path('profiles', views.ProfileViewSet.as_view()),
+    path('profiles/', views.ProfileViewSet.as_view()),
     path('profiles/<profile:profile>', views.ProfileDetailApiView.as_view())
 ]
 
